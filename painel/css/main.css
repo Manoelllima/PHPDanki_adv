@@ -1,0 +1,285 @@
+/* Variáveis CSS para facilitar a customização */
+        :root {
+            --cor-principal: #2c3e50;
+            --cor-secundaria: #34495e;
+            --cor-fundo: #f4f7f6;
+            --cor-texto-claro: #ecf0f1;
+            --cor-card-fundo: #ffffff;
+            --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.05);
+            --transicao-suave: all 0.3s ease-in-out;
+        }
+
+        /* Estilos globais e reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Estilos da barra lateral */
+        .sidebar {
+            width: 300px;
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 0;
+            transition: var(--transicao-suave);
+            z-index: 2;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar .logo h2 {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .sidebar .user-profile{
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar .user-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto;           
+        }
+
+        .sidebar .user-profile h3 {
+            margin: 0.5rem 0 0.25rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .sidebar .user-profile p {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .sidebar nav  {
+            height: 100%;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            transition: var(--transicao-suave);
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .sidebar .submenu{
+            background-color: #34495e;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .sidebar .submenu a {
+            font-size: .8rem;
+        }
+
+        .menu-inferior{
+            margin-top: auto;
+        }
+
+
+        
+        /* Efeito de hover e link ativo */
+        .sidebar nav a:hover,
+        .sidebar nav a.ativo {
+            background-color: var(--cor-secundaria);
+            border-left: 5px solid #3498db;
+            padding-left: 1.75rem;
+        }
+
+        /* Estilos do conteúdo principal */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .navbar {
+            background-color: var(--cor-card-fundo);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--sombra-leve);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        
+        .navbar h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Estilo menu mobile*/
+        .menu-mobile{
+            display: none;
+        }
+
+        .menu-mobile i{
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Estilos da área de conteúdo */
+        .content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        /* Estilos dos cards de visão geral */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--cor-card-fundo);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra-leve);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--cor-principal);
+        }
+
+        /* Estilos da tabela */
+        .tabela-container {
+            background-color: var(--cor-card-fundo);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra-leve);
+        }
+        
+        .tabela-container h2 {
+            margin-bottom: 1rem;
+        }
+
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabela th, .tabela td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .tabela th {
+            font-weight: 600;
+            color: var(--cor-secundaria);
+            text-transform: uppercase;
+        }
+        
+        .tabela tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 920px) {   
+            .sidebar{
+                overflow: hidden;
+                width: 0;
+            }         
+            .sidebar nav {
+                height: auto;
+                
+            }
+
+            .menu-mobile{
+                display: block;
+            }
+
+           
+        }
+
+        /* Estilos para responsividade */
+        @media (max-width: 768px) { 
+                  
+            .sidebar nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .sidebar nav a {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .sidebar nav a:hover,
+            .sidebar nav a.ativo {
+                border-left: none;
+                border-bottom: 3px solid #3498db;
+                padding-bottom: 0.5rem;
+            }
+
+            .main-content {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .navbar h1 {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }

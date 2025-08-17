@@ -1,0 +1,299 @@
+html{    scroll-behavior: smooth;}
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5; /* Cor de fundo suave */
+
+}
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 5%; /* Adiciona padding lateral para o conteúdo não colar nas bordas */
+    display: flex; /* Usa flexbox para alinhar itens */
+    justify-content: space-between; /* Espaça o ícone e o título */
+    align-items: center; /* Alinha verticalmente */
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Aumenta o tamanho do título */
+}
+.header-icon {
+    width: 40px; /* Tamanho do ícone */
+    height: 40px;
+    margin-right: 15px; /* Espaçamento entre o ícone e o título */
+}
+.header-icon svg {
+    fill: white; /* Cor do ícone SVG */
+}
+nav {
+    background-color: #34495e;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 2rem .5rem;
+}
+.secao {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.secao:last-child {
+    border-bottom: none;
+}
+.secao h2 {
+    color: #2c3e50;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    margin-bottom: 1.5rem; /* Adicionado para espaçamento */
+}
+.secao ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+.secao ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Estilos para a nova seção principal (main) */
+main {
+    background-color: #ffffff; /* Fundo branco para o conteúdo principal */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    display: flex;
+    flex-direction: row; /* Layout padrão em linha */
+    width: 80%; /* Ajuste para o container principal */
+    max-width: 1100px; /* Largura máxima para o container */
+    margin: 2rem auto; /* Centraliza e adiciona margem */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    transition: all 0.3s ease-in-out; /* Transição suave para responsividade */
+}
+
+/* Estilos para a div de conteúdo textual dentro de main */
+.main-conteudo {
+    padding: 40px; /* Mais padding interno */
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+    color: #333;
+}
+.main-conteudo h2 {
+    color: #2563eb; /* Cor azul mais vibrante para o título */
+    font-size: 2.25rem; /* Tamanho maior para o título */
+    font-weight: 700; /* Negrito mais forte */
+    margin-bottom: 20px;
+    text-align: left;
+}
+.main-conteudo p {
+    line-height: 1.7; /* Espaçamento de linha melhorado */
+    font-size: 1.1rem; /* Tamanho de fonte ligeiramente maior */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Estilos para a div da imagem dentro de main */
+.main-imagem-container {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-height: 800px; /* Altura mínima para a imagem */
+    background-color: #e0e7ff; /* Cor de fundo para o container da imagem */
+    border-radius: 0 12px 12px 0; /* Apenas os cantos direitos arredondados */
+    overflow: hidden;
+    position: relative;
+}
+.main-imagem-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: 100% 100%; /* Garante que a imagem cubra o container sem distorcer */
+    display: block;
+    border-radius: inherit; /* Herda o border-radius do pai */
+    position: absolute;
+    top: 0;
+    left:  0;
+    
+}
+
+/* Estilos para as duas listas lado a lado */
+.listas-servicos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as listas quebrem para a próxima linha em telas menores */
+    gap: 40px; /* Espaçamento entre as colunas */
+    justify-content: center; /* Centraliza as colunas */
+}
+.listas-servicos > div {
+    flex: 1; /* Permite que cada div ocupe espaço igual */
+    min-width: 280px; /* Largura mínima antes de quebrar a linha */
+}
+.listas-servicos h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* Estilos para o formulário de contato */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura */
+    font-size: 1rem;
+}
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+.form-group button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.form-group button:hover {
+    background-color: #2980b9;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+}
+
+section#map{
+    border-bottom: 1px solid #34495e;
+    min-height: 400px;
+    width: 100%;
+}
+
+/* Responsividade geral */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column; /* Empilha o ícone e o título em telas menores */
+        text-align: center;
+        padding: 1rem 0; /* Ajusta padding */
+    }
+    .header-icon {
+        margin-right: 0; /* Remove margem direita */
+        margin-bottom: 10px; /* Adiciona margem inferior */
+    }
+    main {
+        flex-direction: column; /* Empilha as divs verticalmente */
+        width: 95%; /* Ocupa mais largura em telas menores */
+    }
+    .main-conteudo {
+        padding: 30px; /* Ajusta o padding */
+    }
+    .main-conteudo h2 {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
+        text-align: center; /* Centraliza o título */
+    }
+    .main-conteudo p {
+        font-size: 1rem; /* Reduz o tamanho do parágrafo */
+        text-align: center; /* Centraliza o texto */
+    }
+    .main-imagem-container {
+        order: -1; /* Coloca a imagem acima do texto em telas menores */
+        border-radius: 12px 12px 0 0; /* Cantos superiores arredondados */
+        min-height: 250px; /* Ajusta altura mínima da imagem */
+    }
+    .listas-servicos {
+        flex-direction: column; /* Empilha as listas em telas menores */
+        gap: 20px; /* Reduz o espaçamento */
+    }
+    .container {
+        width: 95%; /* Ajusta a largura do container geral */
+    }
+    .contact-form {
+        padding: 20px; /* Reduz o padding do formulário em telas menores */
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-toggle{
+        display: block;
+    }
+
+    
+    .nav-links a{
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+    }
+    
+    .nav-links{
+        display:none;
+    }
+
+    .main-conteudo {
+        padding: 20px;
+    }
+    .main-conteudo h2 {
+        font-size: 1.5rem;
+    }
+    .main-conteudo p {
+        font-size: 0.9rem;
+    }
+    .secao h2 {
+        font-size: 1.5rem;
+    }
+
+
+}
