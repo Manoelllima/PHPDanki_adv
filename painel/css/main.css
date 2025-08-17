@@ -99,10 +99,20 @@
             background-color: #34495e;
             height: 0;
             overflow: hidden;
+            
         }
 
         .sidebar .submenu a {
             font-size: .8rem;
+        }
+
+        .sidebar .submenu-icon{
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .rotate{
+            transform: rotate(-180deg);
+            transition: transform 0.3s ease-in-out;
         }
 
         .menu-inferior{
@@ -283,3 +293,90 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /*pagina cadastro de usuario*/
+        .cadastro_usuario_container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            margin-top: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cadastro_usuario_container:hover {
+            transform: scale(1.02);
+        }
+
+        .cadastro_usuario_container h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 24px;
+        }
+
+        .cadastro_usuario_form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Estilo para agrupar Nome e Sobrenome */
+        .cadastro_usuario_name-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 640px) {
+            .cadastro_usuario_name-group {
+                flex-direction: row;
+            }
+        }
+
+        .cadastro_usuario_container  label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #555555;
+            margin-bottom: 8px;
+        }
+
+        .cadastro_usuario_container  input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .cadastro_usuario_container  input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        .cadastro_usuario_container  button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .cadastro_usuario_container  button:hover {
+            background-color: #0056b3;
+        }
+
+        /*pagina cadastro de usuario*/

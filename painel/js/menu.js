@@ -19,16 +19,13 @@ $(document).ready(() => {
     //SUBMENUS DA ASIDE
     function submenu(el) {
         $.each(el, (key, element) => {
-            $(element).click(() => {              
-                //posteriormente troca por addClass()
+            $(element).click((e) => { 
                 if ($(element).find('.submenu').height() == 0) {
                     $(element).find('.submenu').css({ 'height': 'auto' });
-                    $(element).find('.submenu-icon').css({ 'transform': 'rotate(-180deg)' });
-                    $(element).find('.submenu-icon').css({ 'transition': 'transform 0.3s ease-in-out'});
+                    $(element).find('.submenu-icon').addClass('rotate');
                 } else {
                     $(element).find('.submenu').css({ 'height': '0' });
-                    $(element).find('.submenu-icon').css({ 'transform': 'rotate(0deg)' });
-                    $(element).find('.submenu-icon').css({ 'transition': 'transform 0.3s ease-in-out'});
+                    $(element).find('.submenu-icon').removeClass('rotate');
                 }
                 return false;
             })
@@ -36,6 +33,11 @@ $(document).ready(() => {
 
     }
     submenu($('.has-submenu'));
+    
 
+    $('.submenu a').click((e)=>{
+        //return false;
+        e.stopPropagation();
+    })
     
 })

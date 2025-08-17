@@ -1,8 +1,7 @@
 <?php
-if (isset($_GET["url"]) == "logout") {
-
+$url = isset($_GET['url']) ? $_GET['url'] : '';
+if ($url == "logout") {
     Painel::logout();
-    echo "<script>alert('deslogado')</script>";
 }
 
 ?>
@@ -32,7 +31,8 @@ if (isset($_GET["url"]) == "logout") {
 
         <div class="user-profile">
             <!-- <img src=https://placehold.co/80x80.png alt="User Photo" class="user-photo"> -->
-            <img src="<?php echo INCLUDE_PATH . "uploads/img/" . $_SESSION['img']; ?>" alt="User Photo" class="user-photo">
+            <img src="<?php echo INCLUDE_PATH . "uploads/img/" . $_SESSION['img']; ?>" alt="User Photo"
+                class="user-photo">
             <h3><?php echo $_SESSION['nome'] . ' ' . $_SESSION['sobrenome']; ?></h3>
             <p><?php echo $_SESSION['cargo']; ?></p>
         </div>
@@ -40,7 +40,7 @@ if (isset($_GET["url"]) == "logout") {
         <nav>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="geral">
                         <i class="fas fa-home"></i>
                         Dashboard
                         <i></i>
@@ -53,7 +53,7 @@ if (isset($_GET["url"]) == "logout") {
                         <i class="fas fa-chevron-down submenu-icon"></i>
                     </a>
                     <ul class="submenu">
-                        <li><a href=""><i class="fas fa-comment-alt"></i> Cadastro de depoimento<i></i></a></li>
+                        <li><a href="cadastro_depoimento"><i class="fas fa-comment-alt"></i> Cadastro de depoimento<i></i></a></li>
                         <li><a href=""><i class="fas fa-concierge-bell"></i> Cadastro de serviço<i></i></a></li>
                         <li><a href=""><i class="fas fa-image"></i> Cadastro de slide<i></i></a></li>
                     </ul>
@@ -77,8 +77,8 @@ if (isset($_GET["url"]) == "logout") {
                         <i class="fas fa-chevron-down submenu-icon"></i>
                     </a>
                     <ul class="submenu">
-                        <li><a href=""><i class="fas fa-user-edit"></i> Editar usuários<i></i></a></li>
-                        <li><a href=""><i class="fas fa-user-plus"></i> Adicionar usuário<i></i></a></li>
+                        <li><a href="editar_usuario"><i class="fas fa-user-edit"></i> Editar usuários<i></i></a></li>
+                        <li><a href="adicionar_usuario"><i class="fas fa-user-plus"></i> Adicionar usuário<i></i></a></li>
                     </ul>
                 </li>
                 <li>
@@ -112,67 +112,16 @@ if (isset($_GET["url"]) == "logout") {
         </header>
 
         <section class="content">
-            <!-- Container dos Cards -->
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Total de Vendas</h3>
-                    <p>R$ 12.500</p>
-                </div>
-                <div class="card">
-                    <h3>Novos Pedidos</h3>
-                    <p>25</p>
-                </div>
-                <div class="card">
-                    <h3>Clientes Ativos</h3>
-                    <p>150</p>
-                </div>
-                <div class="card">
-                    <h3>Tráfego do Site</h3>
-                    <p>+34%</p>
-                </div>
-            </div>
-
-            <!-- Tabela de Dados -->
-            <div class="tabela-container">
-                <h2>Últimos Pedidos</h2>
-                <table class="tabela">
-                    <thead>
-                        <tr>
-                            <th>ID do Pedido</th>
-                            <th>Cliente</th>
-                            <th>Valor</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#1001</td>
-                            <td>João Silva</td>
-                            <td>R$ 250,00</td>
-                            <td>Enviado</td>
-                        </tr>
-                        <tr>
-                            <td>#1002</td>
-                            <td>Maria Oliveira</td>
-                            <td>R$ 450,00</td>
-                            <td>Pendente</td>
-                        </tr>
-                        <tr>
-                            <td>#1003</td>
-                            <td>Carlos Santos</td>
-                            <td>R$ 120,50</td>
-                            <td>Entregue</td>
-                        </tr>
-                        <tr>
-                            <td>#1004</td>
-                            <td>Ana Souza</td>
-                            <td>R$ 675,00</td>
-                            <td>Enviado</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
+            <?php
+                
+                $url = isset($_GET['url']) ? $_GET['url'] : 'geral';
+                if (file_exists('pages/' . $url . '.php')) {
+                    include('pages/' . $url . '.php');
+                } else {
+                    //incluir pagina de erro
+                    include('pages/error.php');
+                }
+            ?>
         </section>
     </main>
     <script src="<?php echo INCLUDE_PATH . "../js/jquery.js"; ?>"></script>
